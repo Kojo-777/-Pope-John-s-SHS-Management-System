@@ -1,0 +1,122 @@
+/* Additional custom styles */
+.bg-primary { background-color: var(--primary-blue) !important; }
+.text-primary { color: var(--primary-blue) !important; }
+.btn-primary { background-color: var(--primary-blue); border-color: var(--primary-blue); color: #ffffff; }
+.btn-primary:hover { background-color: var(--light-blue); border-color: var(--light-blue); color: #fff; }
+
+.bg-secondary { background-color: var(--secondary-yellow) !important; }
+.text-secondary { color: var(--secondary-yellow) !important; }
+.btn-secondary { background-color: var(--secondary-yellow); border-color: var(--secondary-yellow); color: #111; }
+.btn-secondary:hover { filter: brightness(0.95); color: #111; }
+
+a { color: var(--primary-blue); }
+a:hover { color: var(--light-blue); }
+.school-logo {
+    height: 90px;
+    width: auto;
+    margin-right: 15px;
+    display: inline-block;
+    filter: drop-shadow(0 1px 1px rgba(225, 188, 2, 0.721));
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.btn-primary-custom {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--light-blue);
+    border-color: var(--light-blue);
+    color: white;
+}
+
+.stat-card {
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-metric {
+    position: relative;
+    border: none;
+    border-left: 6px solid var(--primary-blue);
+    background-color: var(--white);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.card-metric--blue { border-left-color: var(--primary-blue); }
+.card-metric--yellow { border-left-color: var(--secondary-yellow); }
+
+.card-metric:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.12); }
+
+.metric-title {
+    font-size: .8rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--primary-blue);
+    margin-bottom: .25rem;
+}
+
+.metric-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.icon-pill {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-yellow);
+    color: var(--primary-blue);
+}
+
+.card-metric--yellow .metric-title { color: var(--secondary-yellow); }
+.card-metric--yellow .icon-pill { background-color: var(--primary-blue); color: var(--white); }
+:root {
+    --primary-blue: #1e3a8a;
+    --secondary-yellow: #fbbf24;
+    --light-blue: #3b82f6;
+    --white: #ffffff;
+}
+
+body { background-color: var(--white); }
+body {
+    background-image: url('/static/images/bg.image.png');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-attachment: fixed;
+    background-size: 450px auto;
+}
+
+.bg-primary-custom { background-color: var(--primary-blue) !important; }
+.bg-secondary-custom { background-color: var(--secondary-yellow) !important; }
+.text-primary-custom { color: var(--primary-blue) !important; }
+.text-secondary-custom { color: var(--secondary-yellow) !important; }
+.btn-primary-custom { background-color: var(--primary-blue); border-color: var(--primary-blue); }
+.btn-primary-custom:hover { background-color: var(--light-blue); border-color: var(--light-blue); }
+.navbar-brand { font-weight: bold; font-size: 1.5rem; }
+.sidebar { background-color: var(--primary-blue); min-height: 100vh; color: white; }
+.sidebar .nav-link { color: rgb(255, 255, 255); padding: 10px 15px; margin: 5px 0; }
+.sidebar .nav-link:hover { background-color: var(--light-blue); }
+.stat-card { border-left: 4px solid var(--primary-blue); }

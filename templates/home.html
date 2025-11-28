@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron bg-light rounded p-5 mb-4">
+    <div class="container">
+        <h1 class="display-4 text-primary-custom">Welcome to</h1>
+        <p class="lead">Pope John's Senior High School and Minor  Seminary</p>
+        <hr class="my-4">
+        <p>Vela Damus, We set Sail</p>
+        {% if not user.is_authenticated %}
+            <a class="btn btn-primary-custom btn-lg" href="{% url 'signup' %}" role="button">Get Started</a>
+        {% else %}
+            <a class="btn btn-primary-custom btn-lg" href="{% url 'dashboard' %}" role="button">Go to Dashboard</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-graduation-cap fa-3x text-primary-custom mb-3"></i>
+                <h5 class="card-title">Quality Education</h5>
+                <p class="card-text">Comprehensive academic programs for holistic development.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-pray fa-3x text-primary-custom mb-3"></i>
+                <h5 class="card-title">Spiritual Formation</h5>
+                <p class="card-text">Nurturing spiritual growth and moral values.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-users fa-3x text-primary-custom mb-3"></i>
+                <h5 class="card-title">Community</h5>
+                <p class="card-text">Building a supportive and inclusive community.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

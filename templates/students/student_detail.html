@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="text-primary-custom">Student Details</h2>
+    <div>
+        <a href="{% url 'student_update' student.pk %}" class="btn btn-primary-custom">Edit</a>
+        <a href="{% url 'student_list' %}" class="btn btn-outline-secondary">Back to List</a>
+    </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        {% if student.profile_picture %}
+          <img src="{{ student.profile_picture.url }}" class="img-fluid rounded" alt="Profile Picture">
+        {% else %}
+          <div class="bg-secondary-custom text-white p-5 text-center rounded">No Photo</div>
+        {% endif %}
+      </div>
+      <div class="col-md-8">
+        <dl class="row mb-0">
+          <dt class="col-sm-4">Name</dt>
+          <dd class="col-sm-8">{{ student.first_name }} {{ student.last_name }}</dd>
+
+          <dt class="col-sm-4">Student ID</dt>
+          <dd class="col-sm-8">{{ student.student_id }}</dd>
+
+          <dt class="col-sm-4">Gender</dt>
+          <dd class="col-sm-8">{{ student.get_gender_display }}</dd>
+
+          <dt class="col-sm-4">Date of Birth</dt>
+          <dd class="col-sm-8">{{ student.date_of_birth }}</dd>
+
+          <dt class="col-sm-4">Address</dt>
+          <dd class="col-sm-8">{{ student.address }}</dd>
+
+          <dt class="col-sm-4">Phone</dt>
+          <dd class="col-sm-8">{{ student.phone_number }}</dd>
+
+          <dt class="col-sm-4">Email</dt>
+          <dd class="col-sm-8">{{ student.email }}</dd>
+
+          <dt class="col-sm-4">Course</dt>
+          <dd class="col-sm-8">{{ student.course.name }} ({{ student.course.code }})</dd>
+
+          <dt class="col-sm-4">Enrolled</dt>
+          <dd class="col-sm-8">{{ student.enrollment_date }}</dd>
+        </dl>
+      </div>
+    </div>
+    <hr/>
+    <form method="post" action="{% url 'student_delete' student.pk %}" class="d-inline">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

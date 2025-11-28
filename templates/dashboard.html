@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2 text-primary-custom">Dashboard</h1>
+</div>
+
+<div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card card-metric card-metric--blue h-100 py-2 position-relative">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="metric-title">Total Students</div>
+                        <div class="metric-value">{{ stats.total_students }}</div>
+                    </div>
+                    <div class="col-auto">
+                        <span class="icon-pill"><i class="fas fa-users"></i></span>
+                    </div>
+                </div>
+                <a href="{% url 'student_list' %}" class="stretched-link" aria-label="View all students"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card card-metric card-metric--yellow h-100 py-2 position-relative">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="metric-title">Total Staff</div>
+                        <div class="metric-value">{{ stats.total_staff }}</div>
+                    </div>
+                    <div class="col-auto">
+                        <span class="icon-pill"><i class="fas fa-chalkboard-teacher"></i></span>
+                    </div>
+                </div>
+                <a href="{% url 'staff_list' %}" class="stretched-link" aria-label="View all staff"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card card-metric card-metric--blue h-100 py-2 position-relative">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="metric-title">Courses</div>
+                        <div class="metric-value">{{ stats.total_courses }}</div>
+                    </div>
+                    <div class="col-auto">
+                        <span class="icon-pill"><i class="fas fa-book"></i></span>
+                    </div>
+                </div>
+                <a href="{% url 'course_list' %}" class="stretched-link" aria-label="View all courses"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card card-metric card-metric--yellow h-100 py-2 position-relative">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="metric-title">Departments</div>
+                        <div class="metric-value">{{ stats.total_departments }}</div>
+                    </div>
+                    <div class="col-auto">
+                        <span class="icon-pill"><i class="fas fa-building"></i></span>
+                    </div>
+                </div>
+                <a href="{% url 'department_list' %}" class="stretched-link" aria-label="View all departments"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-primary-custom text-white">
+                <h5 class="mb-0">Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a href="{% url 'student_create' %}" class="btn btn-primary-custom">Add New Student</a>
+                    <a href="{% url 'staff_create' %}" class="btn btn-outline-primary">Add New Staff</a>
+                    <a href="{% url 'course_create' %}" class="btn btn-outline-primary">Add New Course</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
